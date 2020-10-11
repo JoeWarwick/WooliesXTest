@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIProxy1", "APIProxy1\APIProxy1.csproj", "{D53E1B55-A662-4541-8291-BFB7A2925E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProxy.Test", "..\ApiProxy.Test\ApiProxy.Test.csproj", "{8C21100A-F557-4924-B245-633226952AB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D53E1B55-A662-4541-8291-BFB7A2925E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53E1B55-A662-4541-8291-BFB7A2925E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53E1B55-A662-4541-8291-BFB7A2925E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53E1B55-A662-4541-8291-BFB7A2925E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C21100A-F557-4924-B245-633226952AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C21100A-F557-4924-B245-633226952AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C21100A-F557-4924-B245-633226952AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C21100A-F557-4924-B245-633226952AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C30D7B4E-7366-475A-A92B-B7E07FDFBF36}
+	EndGlobalSection
+EndGlobal
