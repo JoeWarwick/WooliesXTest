@@ -5,6 +5,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace APIProxy1.Services
 {
@@ -18,10 +19,17 @@ namespace APIProxy1.Services
             this._client = httpClient;
             this._settings = options?.Value;
         }
-        public UserModel GetUser(string requestUrl)
+        public UserModel GetUser(string requestUrl, ILogger log)
         {
-            var res = GetUserFromLocalApi(requestUrl);
-            return res;
+            try { 
+                var res = GetUserFromLocalApi(requestUrl);
+                return res;
+            }
+            catch(Exception ex)
+            {
+                log.LogDebug(ex.Message, new[] { ex });
+                return null;
+            }
         }
 
         public UserModel GetUserFromLocalApi(string requestUrl)

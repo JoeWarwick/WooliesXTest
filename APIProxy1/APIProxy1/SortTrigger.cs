@@ -41,10 +41,16 @@ namespace APIProxy1
                     return new BadRequestObjectResult(string.Format("The specified sort type {0} is not valid.", req.Query["sortOption"]));
                 }
             }
-
-            var res = await _service.GetShopperHistorySortedBy(sort);     
-
-            return new OkObjectResult(res);           
+            try { 
+                var res = await _service.GetShopperHistorySortedBy(sort);
+                return new OkObjectResult(res);
+            }
+            catch(Exception ex)
+            {
+                log.LogDebug(ex.Message, new[] { ex });
+                return new BadRequestObjectResult(ex);
+            }
+            
         }
     }
 }

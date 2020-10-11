@@ -7,6 +7,7 @@ using System.Linq;
 using FluentAssertions;
 using System.Net.Http;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 
 namespace ApiProxy.Test
 {
@@ -19,11 +20,11 @@ namespace ApiProxy.Test
         {
             // arrange
             var resourceServiceMock = new Mock<IResourceService>();
-            resourceServiceMock.Setup(rs => rs.GetUser(It.IsAny<string>()))
+            resourceServiceMock.Setup(rs => rs.GetUser(It.IsAny<string>(), It.IsAny<ILogger>()))
                 .Returns(new UserModel { name = "test", token = "1234-455662-22233333-3333" });
 
             // act
-            var res = resourceServiceMock.Object.GetUser(It.IsAny<string>());
+            var res = resourceServiceMock.Object.GetUser(It.IsAny<string>(), It.IsAny<ILogger>());
 
             // assert
             Assert.AreEqual(res.name, "test");

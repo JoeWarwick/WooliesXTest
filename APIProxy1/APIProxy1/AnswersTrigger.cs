@@ -18,12 +18,12 @@ namespace APIProxy1
 
         [FunctionName("Answers")]
         public IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestMessage req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequestMessage req,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            var res = _service.GetUser(req.RequestUri.ToString());     
+            var res = _service.GetUser(req.RequestUri.ToString().Split('?')[0], log);     
 
             return new OkObjectResult(res);
         }
